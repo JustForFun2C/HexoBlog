@@ -12,8 +12,8 @@ language:
 timezone:
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/'
+url: //justforfun2c.github.io/slash_ins
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
