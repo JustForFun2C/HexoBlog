@@ -3,11 +3,11 @@
   <title>JUST FOR FUN</title>
   
   
-  <link href="/slash_ins/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="//justforfun2c.github.io/"/>
+  <link href="//justforfun2c.github.io/slash_ins/"/>
   <updated>2018-08-26T13:48:10.874Z</updated>
-  <id>//justforfun2c.github.io/</id>
+  <id>//justforfun2c.github.io/slash_ins/</id>
   
   <author>
     <name>Slash_ins</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="//justforfun2c.github.io/2018/08/26/hello-world/"/>
-    <id>//justforfun2c.github.io/2018/08/26/hello-world/</id>
+    <link href="//justforfun2c.github.io/slash_ins/2018/08/26/hello-world/"/>
+    <id>//justforfun2c.github.io/slash_ins/2018/08/26/hello-world/</id>
     <published>2018-08-26T13:48:10.873Z</published>
     <updated>2018-08-26T13:48:10.874Z</updated>
     
