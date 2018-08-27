@@ -88,4 +88,4 @@ search:
 deploy:
   type: git
   repo: git@github.com:JustForFun2C/slash_ins.git
-  branch: master
+  branch: deploy
