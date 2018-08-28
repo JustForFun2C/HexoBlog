@@ -111,8 +111,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
@@ -128,9 +128,9 @@ scheme: Muse
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   #GitHub: https://github.com/yourname || github
-  简书: https://www.jianshu.com/u/63445e24e8bf || heartbeat
-  邮箱: mailto:yourname@gmail.com || envelope
-  微博: https://weibo.com/6484184030/profile?topnav=1&wvr=6&is_all=1 || weibo
+  Jianshu: https://www.jianshu.com/u/63445e24e8bf || heartbeat
+  E-mail: mailto:sw120302@gmail.com || envelope
+  Weibo: https://weibo.com/6484184030/profile?topnav=1&wvr=6&is_all=1 || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -218,7 +218,7 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
@@ -677,7 +677,7 @@ motion:
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace:
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
