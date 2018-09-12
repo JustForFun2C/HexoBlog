@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F12%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. This is for testing. Date: 912 —&gt; 2 Quick Start Create a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>Blog Testing</category>
+      </categories>
+      <tags>
+        <tag>Test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo deploy 遇到的那些坑]]></title>
+    <url>%2Fslash_ins%2F2018%2F08%2F27%2Fhexo-deploy%2F</url>
+    <content type="text"><![CDATA[简介 通过使用 Hexo + NexT + GitHub Page 可以快速构建一个个人博客 Deploy 修改主站配置文件 123456789url: //justforfun2c.github.io/slash_insroot: /slash_ins/permalink: :year/:month/:day/:title/permalink_defaults:deploy: type: git repo: git@github.com:JustForFun2C/slash_ins.git branch: gh-pages deploy 123hexo cleanhexo generatehexo deploy GitHub Page 源代码和部署代码必须分开在两个不同的 branch, 若放在同一个，则部署后会打乱源代码，会报错 必须建立 branch : gh-pages 来存放部署后的代码，gh-pages branch 才能被 GitHub Pages 的设置中识别]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
