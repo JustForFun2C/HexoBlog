@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title><![CDATA[Docker + Jenkins + GitHub + Hexos]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F12%2Fjenkins-hexo%2F</url>
-    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog]]></content>
+    <url>%2Fslash_ins%2F2018%2F09%2F13%2Fjenkins-hexo%2F</url>
+    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 安装 Docker todo 使用 docker 镜像 certbot 生成证书定制 Jenkins ssl + Git 镜像在 Jenkins 插件安装里面安装 Nodejs 插件 配置安装 Nodejs 版本 安装 Hero-cli Github 上设置 webhook 触发 Jenkins新建 Job 进行配置测试]]></content>
       <categories>
         <category>Deploy</category>
       </categories>

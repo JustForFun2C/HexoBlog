@@ -85,11 +85,11 @@
 <meta name="keywords" content="Hexo,Jenkins,Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker + Jenkins + GitHub + Hexos">
-<meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/09/12/jenkins-hexo/index.html">
+<meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/09/13/jenkins-hexo/index.html">
 <meta property="og:site_name" content="JUST FOR FUN">
 <meta property="og:description" content="简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-12T15:30:59.494Z">
+<meta property="og:updated_time" content="2018-09-13T14:10:58.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker + Jenkins + GitHub + Hexos">
 <meta name="twitter:description" content="简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="//justforfun2c.github.io/slash_ins/2018/09/12/jenkins-hexo/"/>
+  <link rel="canonical" href="//justforfun2c.github.io/slash_ins/2018/09/13/jenkins-hexo/"/>
 
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="//justforfun2c.github.io/slash_ins/slash_ins/2018/09/12/jenkins-hexo/">
+    <link itemprop="mainEntityOfPage" href="//justforfun2c.github.io/slash_ins/slash_ins/2018/09/13/jenkins-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Slash_ins">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T15:30:59+00:00">
-                2018-09-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T14:10:58+00:00">
+                2018-09-13
               </time>
             
 
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  21
+                  83
                 </span>
               
 
@@ -425,6 +425,14 @@
 <li>使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog</li>
 </ul>
 <a id="more"></a>
+<h4 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h4><ul>
+<li>todo</li>
+</ul>
+<h4 id="使用-docker-镜像-certbot-生成证书"><a href="#使用-docker-镜像-certbot-生成证书" class="headerlink" title="使用 docker 镜像 certbot 生成证书"></a>使用 docker 镜像 certbot 生成证书</h4><h4 id="定制-Jenkins-ssl-Git-镜像"><a href="#定制-Jenkins-ssl-Git-镜像" class="headerlink" title="定制 Jenkins ssl + Git 镜像"></a>定制 Jenkins ssl + Git 镜像</h4><h4 id="在-Jenkins-插件安装里面安装-Nodejs-插件"><a href="#在-Jenkins-插件安装里面安装-Nodejs-插件" class="headerlink" title="在 Jenkins 插件安装里面安装 Nodejs 插件"></a>在 Jenkins 插件安装里面安装 Nodejs 插件</h4><ul>
+<li>配置安装 Nodejs 版本</li>
+<li>安装 Hero-cli</li>
+</ul>
+<h4 id="Github-上设置-webhook-触发-Jenkins"><a href="#Github-上设置-webhook-触发-Jenkins" class="headerlink" title="Github 上设置 webhook 触发 Jenkins"></a>Github 上设置 webhook 触发 Jenkins</h4><h4 id="新建-Job-进行配置"><a href="#新建-Job-进行配置" class="headerlink" title="新建 Job 进行配置"></a>新建 Job 进行配置</h4><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4>
       
     </div>
     
@@ -655,7 +663,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Docker"><span class="nav-number">1.1.</span> <span class="nav-text">安装 Docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-docker-镜像-certbot-生成证书"><span class="nav-number">1.2.</span> <span class="nav-text">使用 docker 镜像 certbot 生成证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定制-Jenkins-ssl-Git-镜像"><span class="nav-number">1.3.</span> <span class="nav-text">定制 Jenkins ssl + Git 镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在-Jenkins-插件安装里面安装-Nodejs-插件"><span class="nav-number">1.4.</span> <span class="nav-text">在 Jenkins 插件安装里面安装 Nodejs 插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github-上设置-webhook-触发-Jenkins"><span class="nav-number">1.5.</span> <span class="nav-text">Github 上设置 webhook 触发 Jenkins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建-Job-进行配置"><span class="nav-number">1.6.</span> <span class="nav-text">新建 Job 进行配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试"><span class="nav-number">1.7.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -719,7 +727,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共250字</span>
+  <span class="post-count">博客全站共312字</span>
 </div>
 
         
