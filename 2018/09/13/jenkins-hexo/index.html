@@ -84,15 +84,17 @@
 <meta name="description" content="简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog">
 <meta name="keywords" content="Hexo,Jenkins,Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker + Jenkins + GitHub + Hexos">
+<meta property="og:title" content="Docker + Jenkins + GitHub + Hexo">
 <meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/09/13/jenkins-hexo/index.html">
 <meta property="og:site_name" content="JUST FOR FUN">
 <meta property="og:description" content="简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T14:10:58.646Z">
+<meta property="og:image" content="http://pez5ww4dd.bkt.clouddn.com/blog/2018-09-13-docker_jenkins.png">
+<meta property="og:updated_time" content="2018-09-13T15:09:13.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker + Jenkins + GitHub + Hexos">
+<meta name="twitter:title" content="Docker + Jenkins + GitHub + Hexo">
 <meta name="twitter:description" content="简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog">
+<meta name="twitter:image" content="http://pez5ww4dd.bkt.clouddn.com/blog/2018-09-13-docker_jenkins.png">
 
 
 
@@ -128,7 +130,7 @@
 
 
 
-  <title>Docker + Jenkins + GitHub + Hexos | JUST FOR FUN</title>
+  <title>Docker + Jenkins + GitHub + Hexo | JUST FOR FUN</title>
   
 
 
@@ -318,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker + Jenkins + GitHub + Hexos</h1>
+          <h1 class="post-title" itemprop="name headline">Docker + Jenkins + GitHub + Hexo</h1>
         
 
         <div class="post-meta">
@@ -330,7 +332,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T14:10:58+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T15:09:13+00:00">
                 2018-09-13
               </time>
             
@@ -384,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  83
+                  160
                 </span>
               
 
@@ -428,7 +430,20 @@
 <h4 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h4><ul>
 <li>todo</li>
 </ul>
-<h4 id="使用-docker-镜像-certbot-生成证书"><a href="#使用-docker-镜像-certbot-生成证书" class="headerlink" title="使用 docker 镜像 certbot 生成证书"></a>使用 docker 镜像 certbot 生成证书</h4><h4 id="定制-Jenkins-ssl-Git-镜像"><a href="#定制-Jenkins-ssl-Git-镜像" class="headerlink" title="定制 Jenkins ssl + Git 镜像"></a>定制 Jenkins ssl + Git 镜像</h4><h4 id="在-Jenkins-插件安装里面安装-Nodejs-插件"><a href="#在-Jenkins-插件安装里面安装-Nodejs-插件" class="headerlink" title="在 Jenkins 插件安装里面安装 Nodejs 插件"></a>在 Jenkins 插件安装里面安装 Nodejs 插件</h4><ul>
+<h4 id="使用-docker-镜像-certbot-生成证书"><a href="#使用-docker-镜像-certbot-生成证书" class="headerlink" title="使用 docker 镜像 certbot 生成证书"></a>使用 docker 镜像 certbot 生成证书</h4><h4 id="定制-Jenkins-ssl-Git-镜像"><a href="#定制-Jenkins-ssl-Git-镜像" class="headerlink" title="定制 Jenkins ssl + Git 镜像"></a>定制 Jenkins ssl + Git 镜像</h4><ul>
+<li><p>如何使用 GitHub + DockerHub 自动部署定制镜像 todo</p>
+</li>
+<li><p>使用命令 </p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name myjenkins -it -d -p 9000:8443 -v /etc/localtime:/etc/localtime:ro -v /var/jenkins_home/certs:/certs slashins/docker-jenkin-ssl:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看 docker 镜像是否启动成功</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+<p><img src="http://pez5ww4dd.bkt.clouddn.com/blog/2018-09-13-docker_jenkins.png" alt="docker_jenkins"></p>
+</li>
+<li><p>访问 https://你的域名(或域名):9000 即可访问你的 Jenkins</p>
+</li>
+</ul>
+<h4 id="在-Jenkins-插件安装里面安装-Nodejs-插件"><a href="#在-Jenkins-插件安装里面安装-Nodejs-插件" class="headerlink" title="在 Jenkins 插件安装里面安装 Nodejs 插件"></a>在 Jenkins 插件安装里面安装 Nodejs 插件</h4><ul>
 <li>配置安装 Nodejs 版本</li>
 <li>安装 Hero-cli</li>
 </ul>
@@ -449,7 +464,11 @@
       
         <div class="post-tags">
           
-            <a href="/slash_ins/tags/Hexo-Jenkins-Docker/" rel="tag"><i class="fa fa-tag"></i> Hexo,Jenkins,Docker</a>
+            <a href="/slash_ins/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          
+            <a href="/slash_ins/tags/Jenkins/" rel="tag"><i class="fa fa-tag"></i> Jenkins</a>
+          
+            <a href="/slash_ins/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
           
         </div>
       
@@ -462,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/slash_ins/2018/09/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/slash_ins/2018/09/13/ubuntu-history/" rel="next" title="如何在 Ubuntu 查看历史命令">
+                <i class="fa fa-chevron-left"></i> 如何在 Ubuntu 查看历史命令
               </a>
             
           </div>
@@ -471,6 +490,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/slash_ins/2018/09/13/hexo-deploy/" rel="prev" title="Hexo deploy 遇到的那些坑">
+                Hexo deploy 遇到的那些坑 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -551,7 +574,7 @@
               
                 <a href="/slash_ins/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -562,7 +585,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/slash_ins/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -573,7 +596,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/slash_ins/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -727,7 +750,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共312字</span>
+  <span class="post-count">博客全站共453字</span>
 </div>
 
         

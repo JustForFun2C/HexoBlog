@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Docker + Jenkins + GitHub + Hexos]]></title>
+    <title><![CDATA[Hexo deploy 遇到的那些坑]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F13%2Fhexo-deploy%2F</url>
+    <content type="text"><![CDATA[简介 通过使用 Hexo + NexT + GitHub Page 可以快速构建一个个人博客 Deploy 修改主站配置文件 123456789url: //justforfun2c.github.io/slash_insroot: /slash_ins/permalink: :year/:month/:day/:title/permalink_defaults:deploy: type: git repo: git@github.com:JustForFun2C/slash_ins.git branch: gh-pages deploy 123hexo cleanhexo generatehexo deploy GitHub Page 源代码和部署代码必须分开在两个不同的 branch, 若放在同一个，则部署后会打乱源代码，会报错 必须建立 branch : gh-pages 来存放部署后的代码，gh-pages branch 才能被 GitHub Pages 的设置中识别]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker + Jenkins + GitHub + Hexo]]></title>
     <url>%2Fslash_ins%2F2018%2F09%2F13%2Fjenkins-hexo%2F</url>
-    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 安装 Docker todo 使用 docker 镜像 certbot 生成证书定制 Jenkins ssl + Git 镜像在 Jenkins 插件安装里面安装 Nodejs 插件 配置安装 Nodejs 版本 安装 Hero-cli Github 上设置 webhook 触发 Jenkins新建 Job 进行配置测试]]></content>
+    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 安装 Docker todo 使用 docker 镜像 certbot 生成证书定制 Jenkins ssl + Git 镜像 如何使用 GitHub + DockerHub 自动部署定制镜像 todo 使用命令 1docker run --name myjenkins -it -d -p 9000:8443 -v /etc/localtime:/etc/localtime:ro -v /var/jenkins_home/certs:/certs slashins/docker-jenkin-ssl:latest 查看 docker 镜像是否启动成功 1docker ps 访问 https://你的域名(或域名):9000 即可访问你的 Jenkins 在 Jenkins 插件安装里面安装 Nodejs 插件 配置安装 Nodejs 版本 安装 Hero-cli Github 上设置 webhook 触发 Jenkins新建 Job 进行配置测试]]></content>
       <categories>
         <category>Deploy</category>
       </categories>
       <tags>
-        <tag>Hexo,Jenkins,Docker</tag>
+        <tag>Hexo</tag>
+        <tag>Jenkins</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何在 Ubuntu 查看历史命令]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F13%2Fubuntu-history%2F</url>
+    <content type="text"><![CDATA[简介 一般用户使用的命令都存储在对应用户名根目录下的 .bash_history (如果使用的是 bash shell) 查看 bash shell 下的历史命令12cd /cat .bash_history 查看 zsh shell 下的历史命令12cd /cat .zsh_history]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>CMD</tag>
       </tags>
   </entry>
   <entry>
@@ -20,17 +44,6 @@
       </categories>
       <tags>
         <tag>Test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo deploy 遇到的那些坑]]></title>
-    <url>%2Fslash_ins%2F2018%2F08%2F27%2Fhexo-deploy%2F</url>
-    <content type="text"><![CDATA[简介 通过使用 Hexo + NexT + GitHub Page 可以快速构建一个个人博客 Deploy 修改主站配置文件 123456789url: //justforfun2c.github.io/slash_insroot: /slash_ins/permalink: :year/:month/:day/:title/permalink_defaults:deploy: type: git repo: git@github.com:JustForFun2C/slash_ins.git branch: gh-pages deploy 123hexo cleanhexo generatehexo deploy GitHub Page 源代码和部署代码必须分开在两个不同的 branch, 若放在同一个，则部署后会打乱源代码，会报错 必须建立 branch : gh-pages 来存放部署后的代码，gh-pages branch 才能被 GitHub Pages 的设置中识别]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
