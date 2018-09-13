@@ -1,6 +1,5 @@
 ---
 title: Hexo deploy 遇到的那些坑
-date: 2018-08-27 22:49:23
 tags: Hexo
 categories: Blog
 ---
