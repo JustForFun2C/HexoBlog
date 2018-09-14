@@ -6,7 +6,7 @@ categories: Tools
 
 ### 简介
 
-- 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog
+- Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。
 
 <!-- more -->
 

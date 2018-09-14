@@ -2,8 +2,6 @@
 title: 如何在 Ubuntu 查看历史命令
 tags: [CMD]
 categories: Linux
-
-
 ---
 
 ### 简介
