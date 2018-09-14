@@ -3,12 +3,23 @@
   <entry>
     <title><![CDATA[Cygwin64 推荐安装插件]]></title>
     <url>%2Fslash_ins%2F2018%2F09%2F14%2Fcygwin-use%2F</url>
-    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
+    <content type="text"><![CDATA[简介 Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
       <categories>
         <category>Tools</category>
       </categories>
       <tags>
         <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何在 Ubuntu 查看历史命令]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fubuntu-history%2F</url>
+    <content type="text"><![CDATA[简介 一般用户使用的命令都存储在对应用户名根目录下的 .bash_history (如果使用的是 bash shell) 查看 bash shell 下的历史命令12cd /cat .bash_history 查看 zsh shell 下的历史命令12cd /cat .zsh_history]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>CMD</tag>
       </tags>
   </entry>
   <entry>
@@ -44,17 +55,6 @@
         <tag>Hexo</tag>
         <tag>Jenkins</tag>
         <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[如何在 Ubuntu 查看历史命令]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F13%2Fubuntu-history%2F</url>
-    <content type="text"><![CDATA[简介 一般用户使用的命令都存储在对应用户名根目录下的 .bash_history (如果使用的是 bash shell) 查看 bash shell 下的历史命令12cd /cat .bash_history 查看 zsh shell 下的历史命令12cd /cat .zsh_history]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>CMD</tag>
       </tags>
   </entry>
   <entry>
