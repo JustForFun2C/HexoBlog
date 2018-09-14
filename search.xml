@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[IntelliJ IDEA 注册码]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fidea-license%2F</url>
+    <content type="text"><![CDATA[简介 详情可查看 http://idea.lanyus.com/ 打开IDEA的JVM配置文件，一般会在C:\Users\用户名.IntelliJIdea2018.1\config下的idea64.exe.vmoptions文件,如果找不到可以在IDEA中点击”Help-&gt; “Edit Custom VM Options …”自动打开 在该文件最后添加一句:-javaagent:{你刚刚下载的补丁的路径} 1javaagent:/Users/&#123;你的账户&#125;/Downloads/JetbrainsCrack.jar 重启IDEA,在激活对话框中选Activation code 随便输入 点击OK]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Cygwin64 推荐安装插件]]></title>
     <url>%2Fslash_ins%2F2018%2F09%2F14%2Fcygwin-use%2F</url>
     <content type="text"><![CDATA[简介 Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
@@ -20,17 +31,6 @@
       </categories>
       <tags>
         <tag>CMD</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[IntelliJ IDEA 注册码]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fidea-license%2F</url>
-    <content type="text"><![CDATA[简介 详情可查看 http://idea.lanyus.com/]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
