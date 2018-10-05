@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[IntelliJ IDEA 注册码]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fidea-license%2F</url>
-    <content type="text"><![CDATA[简介 详情可查看 http://idea.lanyus.com/ 打开IDEA的JVM配置文件，一般会在C:\Users\用户名.IntelliJIdea2018.1\config下的idea64.exe.vmoptions文件,如果找不到可以在IDEA中点击”Help-&gt; “Edit Custom VM Options …”自动打开 在该文件最后添加一句:-javaagent:{你刚刚下载的补丁的路径} 1javaagent:/Users/&#123;你的账户&#125;/Downloads/JetbrainsCrack.jar 重启IDEA,在激活对话框中选Activation code 随便输入 点击OK]]></content>
+    <title><![CDATA[Docker + Jenkins + GitHub + Hexo]]></title>
+    <url>%2Fslash_ins%2F2018%2F10%2F05%2Fjenkins-hexo%2F</url>
+    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 安装 Docker todo 使用 docker 镜像 certbot 生成证书定制 Jenkins ssl + Git 镜像 如何使用 GitHub + DockerHub 自动部署定制镜像 todo 使用命令 1docker run --name myjenkins -it -d -p 9000:8443 -v /etc/localtime:/etc/localtime:ro -v /var/jenkins_home/certs:/certs slashins/docker-jenkin-ssl:latest 查看 docker 镜像是否启动成功 1docker ps 访问 https://你的域名(或域名):9000 即可访问你的 Jenkins 在 Jenkins 插件安装里面安装 Nodejs 插件 配置安装 Nodejs 版本 安装 Hero-cli Github 上设置 webhook 触发 Jenkins Repository - setting - webhooks​ - add webhook 填写相应信息 payload url 填写 Jenkins 部署的地址 + GitHub-webhook 1https://Jenkins地址/github-webhook/ Content type : application / json SSL verification 因为我们使用的私人证书，可以先 disable 触发方式：Just the push event 在 Github 上获取 Personal access tokens Settings - Developer settings - Personal access tokens 需要 admin:repo_hook, repo 权限，注意：生成后要手动保存该 tokens 新建 Job 进行配置 其中 secret text 配置的是由 Github 授权的 tokens 测试 对文章进行修改，并上传到 Github 即可出发 Jenkins build 生成相应的博客文章 经测试，可成功触发]]></content>
+      <categories>
+        <category>Deploy</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Jenkins</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[chrome 滚动截屏]]></title>
+    <url>%2Fslash_ins%2F2018%2F10%2F05%2Fchrome-tools%2F</url>
+    <content type="text"><![CDATA[简介 无须安装任何插件即可在 chrome 中完成滚动截屏 具体步骤 打开 chrome 自带的开发者工具 使用快捷键 Ctrl + Shift + p 输入 capture full size scrrenshoot , 回车即可完成全屏截取]]></content>
       <categories>
         <category>Tools</category>
       </categories>
@@ -12,9 +25,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Cygwin64 推荐安装插件]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fcygwin-use%2F</url>
-    <content type="text"><![CDATA[简介 Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
+    <title><![CDATA[IntelliJ IDEA 注册码]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fidea-license%2F</url>
+    <content type="text"><![CDATA[简介 详情可查看 http://idea.lanyus.com/ 打开IDEA的JVM配置文件，一般会在C:\Users\用户名.IntelliJIdea2018.1\config下的idea64.exe.vmoptions文件,如果找不到可以在IDEA中点击”Help-&gt; “Edit Custom VM Options …”自动打开 在该文件最后添加一句:-javaagent:{你刚刚下载的补丁的路径} 1javaagent:/Users/&#123;你的账户&#125;/Downloads/JetbrainsCrack.jar 重启IDEA,在激活对话框中选Activation code 随便输入 点击OK]]></content>
       <categories>
         <category>Tools</category>
       </categories>
@@ -34,6 +47,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Cygwin64 推荐安装插件]]></title>
+    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fcygwin-use%2F</url>
+    <content type="text"><![CDATA[简介 Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo deploy 遇到的那些坑]]></title>
     <url>%2Fslash_ins%2F2018%2F09%2F13%2Fhexo-deploy%2F</url>
     <content type="text"><![CDATA[简介 通过使用 Hexo + NexT + GitHub Page 可以快速构建一个个人博客 Deploy 修改主站配置文件 123456789url: //justforfun2c.github.io/slash_insroot: /slash_ins/permalink: :year/:month/:day/:title/permalink_defaults:deploy: type: git repo: git@github.com:JustForFun2C/slash_ins.git branch: gh-pages deploy 123hexo cleanhexo generatehexo deploy GitHub Page 源代码和部署代码必须分开在两个不同的 branch, 若放在同一个，则部署后会打乱源代码，会报错 必须建立 branch : gh-pages 来存放部署后的代码，gh-pages branch 才能被 GitHub Pages 的设置中识别]]></content>
@@ -42,19 +66,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Docker + Jenkins + GitHub + Hexo]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F13%2Fjenkins-hexo%2F</url>
-    <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 安装 Docker todo 使用 docker 镜像 certbot 生成证书定制 Jenkins ssl + Git 镜像 如何使用 GitHub + DockerHub 自动部署定制镜像 todo 使用命令 1docker run --name myjenkins -it -d -p 9000:8443 -v /etc/localtime:/etc/localtime:ro -v /var/jenkins_home/certs:/certs slashins/docker-jenkin-ssl:latest 查看 docker 镜像是否启动成功 1docker ps 访问 https://你的域名(或域名):9000 即可访问你的 Jenkins 在 Jenkins 插件安装里面安装 Nodejs 插件 配置安装 Nodejs 版本 安装 Hero-cli Github 上设置 webhook 触发 Jenkins新建 Job 进行配置测试]]></content>
-      <categories>
-        <category>Deploy</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Jenkins</tag>
-        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
