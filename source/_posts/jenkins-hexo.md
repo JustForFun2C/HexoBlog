@@ -44,7 +44,37 @@ categories: Deploy
 
 #### Github 上设置 webhook 触发 Jenkins
 
+- Repository - setting - webhooks​ - add webhook     ![webhooks](http://pez5ww4dd.bkt.clouddn.com/blog/2018-10-05-webhook.png)
+
+- 填写相应信息
+
+  - payload url 填写 Jenkins 部署的地址 + GitHub-webhook
+
+  ```
+  https://Jenkins地址/github-webhook/
+  ```
+
+  - Content type : application / json
+
+  - SSL verification 因为我们使用的私人证书，可以先 disable
+
+  - 触发方式：Just the push event
+
+    ![add_webhook](http://pez5ww4dd.bkt.clouddn.com/blog/2018-10-05-add_webhook.png)
+
+#### 在 Github 上获取 Personal access tokens
+
+- Settings - Developer settings - Personal access tokens
+- 需要 admin:repo_hook, repo 权限，注意：生成后要手动保存该 tokens
+
 #### 新建 Job 进行配置
 
+- 其中 secret text 配置的是由 Github 授权的 tokens
+
+  ![jenkins_config](http://pez5ww4dd.bkt.clouddn.com/blog/2018-10-05-jenkins_configure.png)
+
 #### 测试
+
+- 对文章进行修改，并上传到 Github 即可出发 Jenkins build 生成相应的博客文章
+- 经测试，可成功触发
 
