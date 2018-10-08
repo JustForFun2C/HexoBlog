@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python 模拟鼠标键盘操作]]></title>
+    <url>%2Fslash_ins%2F2018%2F10%2F08%2Fpython-PyUserInput%2F</url>
+    <content type="text"><![CDATA[简介 可使用 PyUserInput 来实现，以下参照Python-模拟鼠标键盘动作 安装 依赖包 pywin32 1python -m pip install pypiwin32 pyhook: 下载相应 python 版本的 pyhook.whl 安装1pip install pyHook-1.5.1-cp36-cp36m-win_amd64.whl 安装 PyUserInput 1pip install PyUserInput 调用方法 建立一个鼠标和键盘对象 1234from pymouse import PyMousefrom pykeyboard import PyKeyboardm = PyMouse()k = PyKeyboard() 输入字符串 1k.type_string('Hello World') 发送键盘键入 123456789101112131415161718192021222324252627# pressing a keyk.press_key('H')# which you then follow with a release of the keyk.release_key('H')# or you can 'tap' a key which does bothk.tap_key('e')# note that that tap_key does support a way of repeating keystrokes with a interval time between eachk.tap_key('l',n=2,interval=5) # 支持特殊键# Create an Alt+Tab combok.press_key(k.alt_key)k.release_key(k.alt_key)k.tap_key(k.tab_key)# Tap F5k.tap_key(k.function_keys[5]) # Tap 'Home' on the numpadk.tap_key(k.numpad_keys['Home']) # Tap 5 on the numpad, thricek.tap_key(k.numpad_keys[5], n=3) # Tap 5 on the numpad, thrice windown 下组合键， 如 ctrl + shift + i 123456789k = PyKeyboard()time.sleep(random.randint(2, 4))k.press_key(k.control_key)k.press_key(k.shift_key)time.sleep(0.2)k.tap_key('i')k.release_key(k.shift_key)k.release_key(k.control_key)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何使用 selenium 改变文件下载路径]]></title>
+    <url>%2Fslash_ins%2F2018%2F10%2F08%2Fpython-selenium-capabilities%2F</url>
+    <content type="text"><![CDATA[简介 可通过修改 webdriver.ChromeOptions() 来实现，可参考 capabilities 相关代码可参考12345chromeOptions = webdriver.ChromeOptions() prefs = &#123;"download.default_directory" : "/some/path"&#125; chromeOptions.add_experimental_option("prefs",prefs) chromedriver = "path/to/chromedriver.exe" driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Selenium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker + Jenkins + GitHub + Hexo]]></title>
     <url>%2Fslash_ins%2F2018%2F10%2F05%2Fjenkins-hexo%2F</url>
     <content type="text"><![CDATA[简介 使用 Docker + Jenkins + GitHub 实现 push 到 GitHub 自动触发 Jenkins 部署 Hexo Blog 安装 Docker todo 使用 docker 镜像 certbot 生成证书定制 Jenkins ssl + Git 镜像 如何使用 GitHub + DockerHub 自动部署定制镜像 todo 使用命令 1docker run --name myjenkins -it -d -p 9000:8443 -v /etc/localtime:/etc/localtime:ro -v /var/jenkins_home/certs:/certs slashins/docker-jenkin-ssl:latest 查看 docker 镜像是否启动成功 1docker ps 访问 https://你的域名(或域名):9000 即可访问你的 Jenkins 在 Jenkins 插件安装里面安装 Nodejs 插件 配置安装 Nodejs 版本 安装 Hero-cli Github 上设置 webhook 触发 Jenkins Repository - setting - webhooks​ - add webhook 填写相应信息 payload url 填写 Jenkins 部署的地址 + GitHub-webhook 1https://Jenkins地址/github-webhook/ Content type : application / json SSL verification 因为我们使用的私人证书，可以先 disable 触发方式：Just the push event 在 Github 上获取 Personal access tokens Settings - Developer settings - Personal access tokens 需要 admin:repo_hook, repo 权限，注意：生成后要手动保存该 tokens 新建 Job 进行配置 其中 secret text 配置的是由 Github 授权的 tokens 测试 对文章进行修改，并上传到 Github 即可出发 Jenkins build 生成相应的博客文章 经测试，可成功触发]]></content>
