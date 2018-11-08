@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Selenium," />
+  <meta name="keywords" content="Tools," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="简介 可通过修改 webdriver.ChromeOptions() 来实现，可参考 capabilities">
-<meta name="keywords" content="Selenium">
+<meta name="description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
+<meta name="keywords" content="Tools">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何使用 selenium 改变文件下载路径">
-<meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/10/08/python-selenium-capabilities/index.html">
+<meta property="og:title" content="批量遍历 52 states flows">
+<meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/11/08/project-52 states regression/index.html">
 <meta property="og:site_name" content="JUST FOR FUN">
-<meta property="og:description" content="简介 可通过修改 webdriver.ChromeOptions() 来实现，可参考 capabilities">
+<meta property="og:description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-08T05:46:16.618Z">
+<meta property="og:updated_time" content="2018-11-08T06:34:15.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何使用 selenium 改变文件下载路径">
-<meta name="twitter:description" content="简介 可通过修改 webdriver.ChromeOptions() 来实现，可参考 capabilities">
+<meta name="twitter:title" content="批量遍历 52 states flows">
+<meta name="twitter:description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="//justforfun2c.github.io/slash_ins/2018/10/08/python-selenium-capabilities/"/>
+  <link rel="canonical" href="//justforfun2c.github.io/slash_ins/2018/11/08/project-52 states regression/"/>
 
 
 
 
 
-  <title>如何使用 selenium 改变文件下载路径 | JUST FOR FUN</title>
+  <title>批量遍历 52 states flows | JUST FOR FUN</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="//justforfun2c.github.io/slash_ins/slash_ins/2018/10/08/python-selenium-capabilities/">
+    <link itemprop="mainEntityOfPage" href="//justforfun2c.github.io/slash_ins/slash_ins/2018/11/08/project-52 states regression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Slash_ins">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何使用 selenium 改变文件下载路径</h1>
+          <h1 class="post-title" itemprop="name headline">批量遍历 52 states flows</h1>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T05:46:16+00:00">
-                2018-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T06:34:15+00:00">
+                2018-11-08
               </time>
             
 
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/slash_ins/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/slash_ins/categories/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
                   </a>
                 </span>
 
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  52
+                  630
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -421,11 +421,78 @@
       
 
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
-<li>可通过修改 webdriver.ChromeOptions() 来实现，可参考 <a href="https://sites.google.com/a/chromium.org/chromedriver/capabilities" target="_blank" rel="noopener">capabilities</a></li>
+        <h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><ul>
+<li>最近在做某产品线的部分回归脚本，大体的需求是<ul>
+<li>通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page）</li>
+<li>判断 52 states 跳转的 quote page 是否是正确的</li>
+</ul>
+</li>
 </ul>
 <a id="more"></a>
-<h3 id="相关代码可参考"><a href="#相关代码可参考" class="headerlink" title="相关代码可参考"></a>相关代码可参考</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chromeOptions = webdriver.ChromeOptions() </span><br><span class="line">prefs = &#123;<span class="string">"download.default_directory"</span> : <span class="string">"/some/path"</span>&#125; </span><br><span class="line">chromeOptions.add_experimental_option(<span class="string">"prefs"</span>,prefs) </span><br><span class="line">chromedriver = <span class="string">"path/to/chromedriver.exe"</span> </span><br><span class="line">driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)</span><br></pre></td></tr></table></figure>
+<h3 id="脚本使用框架"><a href="#脚本使用框架" class="headerlink" title="脚本使用框架"></a>脚本使用框架</h3><ul>
+<li>Python + selenium</li>
+</ul>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ul>
+<li>如何判断不同的 quote page</li>
+<li>单个用例流程有三个页面，但是遍历后52 states ，每个 state 有4种情况，总共有 200 多个 cases ，如何保证中途 driver 的稳定性</li>
+<li>由第 2 点联想到，200多个 cases，如果顺利，需要至少 1 个半小时，如何缩短运行时间</li>
+<li>cases 中途失败，如何继续往下跑，并在最后进行重试</li>
+<li>cases 失败后如何查看失败情况</li>
+<li>项目部署</li>
+</ul>
+<h3 id="脚本基本流程"><a href="#脚本基本流程" class="headerlink" title="脚本基本流程"></a>脚本基本流程</h3><ul>
+<li>启动 driver</li>
+<li>delete cookies</li>
+<li>主页</li>
+<li>填写信息页 (zipcode / user info)</li>
+<li>判断 quote page</li>
+</ul>
+<h3 id="脚本分层"><a href="#脚本分层" class="headerlink" title="脚本分层"></a>脚本分层</h3><ul>
+<li>init.py / init_db.py<ul>
+<li>初始化</li>
+</ul>
+</li>
+<li>configure.conf<ul>
+<li>配置文件：数据库 / 测试domain / user info</li>
+</ul>
+</li>
+<li>logic.py<ul>
+<li>逻辑层：用来判断是哪种类型的 quote page</li>
+</ul>
+</li>
+<li>db.py<ul>
+<li>db 相关操作</li>
+</ul>
+</li>
+<li>tools.py<ul>
+<li>方法封装：如获取报告路径 / 获取不同 env 对应的 domian 等等</li>
+</ul>
+</li>
+<li>user_flows.py<ul>
+<li>使用 Webdriver 走 UI 到达 quote page 的 flows</li>
+</ul>
+</li>
+<li>XXX-test.py<ul>
+<li>脚本入口：包括处理 exception 和重跑机制 </li>
+</ul>
+</li>
+</ul>
+<h3 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h3><ul>
+<li>对脚本一定要进行分层，比如单独把判断 quote page 的逻辑封装，在验证完逻辑没问题后，后面为了维护脚本稳定性就不会动到逻辑这块，不需要重新大规模验证</li>
+<li><p>大量运行的用例会使 remote driver 不太稳定，经常出现 driver connect time out 的情况</p>
+<ul>
+<li><p>解决方法：每 4 个用例过后就重启一次 driver,在 4 次用例中如再有失败，则记录下相应的信息并重启 driver ，在脚本循环结束后进行重跑,并且每一次到达 quote page 都进行截图，方便后面排查问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  		<span class="keyword">if</span> state_count != <span class="number">0</span>:</span><br><span class="line">      		driver = start_new_driver()</span><br><span class="line">      		<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">      			<span class="keyword">try</span>:</span><br><span class="line">      				<span class="comment"># to do</span></span><br><span class="line">      			exception:</span><br><span class="line">      				<span class="comment"># write the releted info to the error file for rerun the cases last</span></span><br><span class="line">      				result = (<span class="string">'no'</span>, <span class="string">'url'</span>)</span><br><span class="line">      		<span class="comment"># restart the driver			</span></span><br><span class="line">      	    <span class="keyword">if</span> <span class="string">'no'</span> <span class="keyword">in</span> result[<span class="number">0</span>]:</span><br><span class="line">              	driver = start_new_driver()</span><br><span class="line">              <span class="keyword">else</span></span><br><span class="line">              	<span class="comment"># screen shot</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>python 本身没有并发机制，在 Jenkins 上部署多个 Job 来进行伪并发，但是要解决报告数据合并的问题</p>
+<ul>
+<li>解决方法：将每个 job 结束后报告数据存入数据库，等所有 job 完成后，再从数据库重新取出，生成最后的报告</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     
@@ -442,7 +509,7 @@
       
         <div class="post-tags">
           
-            <a href="/slash_ins/tags/Selenium/" rel="tag"><i class="fa fa-tag"></i> Selenium</a>
+            <a href="/slash_ins/tags/Tools/" rel="tag"><i class="fa fa-tag"></i> Tools</a>
           
         </div>
       
@@ -455,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/slash_ins/2018/10/05/jenkins-hexo/" rel="next" title="Docker + Jenkins + GitHub + Hexo">
-                <i class="fa fa-chevron-left"></i> Docker + Jenkins + GitHub + Hexo
+              <a href="/slash_ins/2018/11/08/python-PyUserInput/" rel="next" title="Python 模拟鼠标键盘操作">
+                <i class="fa fa-chevron-left"></i> Python 模拟鼠标键盘操作
               </a>
             
           </div>
@@ -465,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/slash_ins/2018/10/08/python-PyUserInput/" rel="prev" title="Python 模拟鼠标键盘操作">
-                Python 模拟鼠标键盘操作 <i class="fa fa-chevron-right"></i>
+              <a href="/slash_ins/2018/11/08/idea-license/" rel="prev" title="IntelliJ IDEA 注册码">
+                IntelliJ IDEA 注册码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +615,7 @@
               
                 <a href="/slash_ins/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -559,7 +626,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/slash_ins/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -660,7 +727,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关代码可参考"><span class="nav-number">2.</span> <span class="nav-text">相关代码可参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目背景"><span class="nav-number">1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本使用框架"><span class="nav-number">2.</span> <span class="nav-text">脚本使用框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#难点"><span class="nav-number">3.</span> <span class="nav-text">难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本基本流程"><span class="nav-number">4.</span> <span class="nav-text">脚本基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本分层"><span class="nav-number">5.</span> <span class="nav-text">脚本分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经验总结"><span class="nav-number">6.</span> <span class="nav-text">经验总结</span></a></li></ol></div>
             
 
           </div>
@@ -724,7 +791,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.4k字</span>
+  <span class="post-count">博客全站共2.0k字</span>
 </div>
 
         

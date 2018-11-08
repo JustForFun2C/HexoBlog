@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何使用 selenium 改变文件下载路径]]></title>
+    <url>%2Fslash_ins%2F2018%2F11%2F08%2Fpython-selenium-capabilities%2F</url>
+    <content type="text"><![CDATA[简介 可通过修改 webdriver.ChromeOptions() 来实现，可参考 capabilities 相关代码可参考12345chromeOptions = webdriver.ChromeOptions() prefs = &#123;"download.default_directory" : "/some/path"&#125; chromeOptions.add_experimental_option("prefs",prefs) chromedriver = "path/to/chromedriver.exe" driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Selenium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IntelliJ IDEA 注册码]]></title>
+    <url>%2Fslash_ins%2F2018%2F11%2F08%2Fidea-license%2F</url>
+    <content type="text"><![CDATA[简介 详情可查看 http://idea.lanyus.com/ 打开IDEA的JVM配置文件，一般会在C:\Users\用户名.IntelliJIdea2018.1\config下的idea64.exe.vmoptions文件,如果找不到可以在IDEA中点击”Help-&gt; “Edit Custom VM Options …”自动打开 在该文件最后添加一句:-javaagent:{你刚刚下载的补丁的路径} 1javaagent:/Users/&#123;你的账户&#125;/Downloads/JetbrainsCrack.jar 重启IDEA,在激活对话框中选Activation code 随便输入 点击OK]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[批量遍历 52 states flows]]></title>
+    <url>%2Fslash_ins%2F2018%2F11%2F08%2Fproject-52%20states%20regression%2F</url>
+    <content type="text"><![CDATA[项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的 脚本使用框架 Python + selenium 难点 如何判断不同的 quote page 单个用例流程有三个页面，但是遍历后52 states ，每个 state 有4种情况，总共有 200 多个 cases ，如何保证中途 driver 的稳定性 由第 2 点联想到，200多个 cases，如果顺利，需要至少 1 个半小时，如何缩短运行时间 cases 中途失败，如何继续往下跑，并在最后进行重试 cases 失败后如何查看失败情况 项目部署 脚本基本流程 启动 driver delete cookies 主页 填写信息页 (zipcode / user info) 判断 quote page 脚本分层 init.py / init_db.py 初始化 configure.conf 配置文件：数据库 / 测试domain / user info logic.py 逻辑层：用来判断是哪种类型的 quote page db.py db 相关操作 tools.py 方法封装：如获取报告路径 / 获取不同 env 对应的 domian 等等 user_flows.py 使用 Webdriver 走 UI 到达 quote page 的 flows XXX-test.py 脚本入口：包括处理 exception 和重跑机制 经验总结 对脚本一定要进行分层，比如单独把判断 quote page 的逻辑封装，在验证完逻辑没问题后，后面为了维护脚本稳定性就不会动到逻辑这块，不需要重新大规模验证 大量运行的用例会使 remote driver 不太稳定，经常出现 driver connect time out 的情况 解决方法：每 4 个用例过后就重启一次 driver,在 4 次用例中如再有失败，则记录下相应的信息并重启 driver ，在脚本循环结束后进行重跑,并且每一次到达 quote page 都进行截图，方便后面排查问题 1234567891011121314while True: if state_count != 0: driver = start_new_driver() for i in range(4): try: # to do exception: # write the releted info to the error file for rerun the cases last result = ('no', 'url') # restart the driver if 'no' in result[0]: driver = start_new_driver() else # screen shot python 本身没有并发机制，在 Jenkins 上部署多个 Job 来进行伪并发，但是要解决报告数据合并的问题 解决方法：将每个 job 结束后报告数据存入数据库，等所有 job 完成后，再从数据库重新取出，生成最后的报告]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python 模拟鼠标键盘操作]]></title>
-    <url>%2Fslash_ins%2F2018%2F10%2F08%2Fpython-PyUserInput%2F</url>
+    <url>%2Fslash_ins%2F2018%2F11%2F08%2Fpython-PyUserInput%2F</url>
     <content type="text"><![CDATA[简介 可使用 PyUserInput 来实现，以下参照Python-模拟鼠标键盘动作 安装 依赖包 pywin32 1python -m pip install pypiwin32 pyhook: 下载相应 python 版本的 pyhook.whl 安装1pip install pyHook-1.5.1-cp36-cp36m-win_amd64.whl 安装 PyUserInput 1pip install PyUserInput 调用方法 建立一个鼠标和键盘对象 1234from pymouse import PyMousefrom pykeyboard import PyKeyboardm = PyMouse()k = PyKeyboard() 输入字符串 1k.type_string('Hello World') 发送键盘键入 123456789101112131415161718192021222324252627# pressing a keyk.press_key('H')# which you then follow with a release of the keyk.release_key('H')# or you can 'tap' a key which does bothk.tap_key('e')# note that that tap_key does support a way of repeating keystrokes with a interval time between eachk.tap_key('l',n=2,interval=5) # 支持特殊键# Create an Alt+Tab combok.press_key(k.alt_key)k.release_key(k.alt_key)k.tap_key(k.tab_key)# Tap F5k.tap_key(k.function_keys[5]) # Tap 'Home' on the numpadk.tap_key(k.numpad_keys['Home']) # Tap 5 on the numpad, thricek.tap_key(k.numpad_keys[5], n=3) # Tap 5 on the numpad, thrice windown 下组合键， 如 ctrl + shift + i 123456789k = PyKeyboard()time.sleep(random.randint(2, 4))k.press_key(k.control_key)k.press_key(k.shift_key)time.sleep(0.2)k.tap_key('i')k.release_key(k.shift_key)k.release_key(k.control_key)]]></content>
       <categories>
         <category>Python</category>
@@ -12,14 +45,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[如何使用 selenium 改变文件下载路径]]></title>
-    <url>%2Fslash_ins%2F2018%2F10%2F08%2Fpython-selenium-capabilities%2F</url>
-    <content type="text"><![CDATA[简介 可通过修改 webdriver.ChromeOptions() 来实现，可参考 capabilities 相关代码可参考12345chromeOptions = webdriver.ChromeOptions() prefs = &#123;"download.default_directory" : "/some/path"&#125; chromeOptions.add_experimental_option("prefs",prefs) chromedriver = "path/to/chromedriver.exe" driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)]]></content>
+    <title><![CDATA[Cygwin64 推荐安装插件]]></title>
+    <url>%2Fslash_ins%2F2018%2F11%2F08%2Fcygwin-use%2F</url>
+    <content type="text"><![CDATA[简介 Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
       <categories>
-        <category>Python</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>Selenium</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -39,28 +72,6 @@
     <title><![CDATA[chrome 滚动截屏]]></title>
     <url>%2Fslash_ins%2F2018%2F10%2F05%2Fchrome-tools%2F</url>
     <content type="text"><![CDATA[简介 无须安装任何插件即可在 chrome 中完成滚动截屏 具体步骤 打开 chrome 自带的开发者工具 使用快捷键 Ctrl + Shift + p 输入 capture full size scrrenshoot , 回车即可完成全屏截取]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[IntelliJ IDEA 注册码]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fidea-license%2F</url>
-    <content type="text"><![CDATA[简介 详情可查看 http://idea.lanyus.com/ 打开IDEA的JVM配置文件，一般会在C:\Users\用户名.IntelliJIdea2018.1\config下的idea64.exe.vmoptions文件,如果找不到可以在IDEA中点击”Help-&gt; “Edit Custom VM Options …”自动打开 在该文件最后添加一句:-javaagent:{你刚刚下载的补丁的路径} 1javaagent:/Users/&#123;你的账户&#125;/Downloads/JetbrainsCrack.jar 重启IDEA,在激活对话框中选Activation code 随便输入 点击OK]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Cygwin64 推荐安装插件]]></title>
-    <url>%2Fslash_ins%2F2018%2F09%2F14%2Fcygwin-use%2F</url>
-    <content type="text"><![CDATA[简介 Cygwin是一个在windows平台上运行的类UNIX模拟环境,它对于学习UNIX/Linux操作环境，或者从UNIX到Windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用GNU工具集在Windows上进行嵌入式系统开发，非常有用。 推荐安装插件 Vim Wget Curl Git lynx (可用来安装 apt-cyg) gcc gcc-core gcc-g++ make gdb binutils inetutils (telnet, 也可安装完 apt-cyg 后安装 apt-cyg install inetutils) 安装 apt-cyg123git clone https://github.com/transcode-open/apt-cyg.gitcd apt-cyg /*切换到apt-cyg源码目录*/install apt-cyg /bin /*将apt-cyg安装到/bin目录下*/ 安装 zsh / oh-my-zsh1apt-get install -y zsh 自动启用 zsh 在 .bashrc 文件最后添加 1exec /bin/zsh 重新载入配置文件 1source ~/.bashrc 安装 oh-my-zsh1wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh 修改主题 1vim ~/.zshrc 重新载入配置文件 1source ~/.zshrc]]></content>
       <categories>
         <category>Tools</category>
       </categories>
