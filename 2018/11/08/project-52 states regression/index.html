@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Tools," />
+  <meta name="keywords" content="Project," />
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
-<meta name="keywords" content="Tools">
+<meta name="keywords" content="Project">
 <meta property="og:type" content="article">
 <meta property="og:title" content="批量遍历 52 states flows">
 <meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/11/08/project-52 states regression/index.html">
 <meta property="og:site_name" content="JUST FOR FUN">
 <meta property="og:description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T06:34:15.038Z">
+<meta property="og:updated_time" content="2018-11-08T06:52:54.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="批量遍历 52 states flows">
 <meta name="twitter:description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
@@ -330,7 +330,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T06:34:15+00:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T06:52:54+00:00">
                 2018-11-08
               </time>
             
@@ -478,16 +478,17 @@
 </li>
 </ul>
 <h3 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h3><ul>
-<li>对脚本一定要进行分层，比如单独把判断 quote page 的逻辑封装，在验证完逻辑没问题后，后面为了维护脚本稳定性就不会动到逻辑这块，不需要重新大规模验证</li>
+<li><p>对脚本一定要进行分层，比如单独把判断 quote page 的逻辑封装，在验证完逻辑没问题后，后面为了维护脚本稳定性就不会动到逻辑这块，不需要重新大规模验证</p>
+</li>
 <li><p>大量运行的用例会使 remote driver 不太稳定，经常出现 driver connect time out 的情况</p>
 <ul>
-<li><p>解决方法：每 4 个用例过后就重启一次 driver,在 4 次用例中如再有失败，则记录下相应的信息并重启 driver ，在脚本循环结束后进行重跑,并且每一次到达 quote page 都进行截图，方便后面排查问题</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  		<span class="keyword">if</span> state_count != <span class="number">0</span>:</span><br><span class="line">      		driver = start_new_driver()</span><br><span class="line">      		<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">      			<span class="keyword">try</span>:</span><br><span class="line">      				<span class="comment"># to do</span></span><br><span class="line">      			exception:</span><br><span class="line">      				<span class="comment"># write the releted info to the error file for rerun the cases last</span></span><br><span class="line">      				result = (<span class="string">'no'</span>, <span class="string">'url'</span>)</span><br><span class="line">      		<span class="comment"># restart the driver			</span></span><br><span class="line">      	    <span class="keyword">if</span> <span class="string">'no'</span> <span class="keyword">in</span> result[<span class="number">0</span>]:</span><br><span class="line">              	driver = start_new_driver()</span><br><span class="line">              <span class="keyword">else</span></span><br><span class="line">              	<span class="comment"># screen shot</span></span><br></pre></td></tr></table></figure>
+<li>解决方法：每 4 个用例过后就重启一次 driver,在 4 次用例中如再有失败，则记录下相应的信息并重启 driver ，在脚本循环结束后进行重跑,并且每一次到达 quote page 都进行截图，方便后面排查问题<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">   	<span class="keyword">if</span> state_count != <span class="number">0</span>:</span><br><span class="line">       	driver = start_new_driver()</span><br><span class="line">       	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">       		<span class="keyword">try</span>:</span><br><span class="line">       			<span class="comment"># to do</span></span><br><span class="line">       		exception:</span><br><span class="line">       			<span class="comment"># write the releted info to the error file for rerun the cases last</span></span><br><span class="line">       			result = (<span class="string">'no'</span>, <span class="string">'url'</span>)</span><br><span class="line">       	<span class="comment"># restart the driver			</span></span><br><span class="line">       	<span class="keyword">if</span> <span class="string">'no'</span> <span class="keyword">in</span> result[<span class="number">0</span>]:</span><br><span class="line">               driver = start_new_driver()</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">               <span class="comment"># screen shot</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>python 本身没有并发机制，在 Jenkins 上部署多个 Job 来进行伪并发，但是要解决报告数据合并的问题</p>
+</ul>
 <ul>
+<li>python 本身没有并发机制，在 Jenkins 上部署多个 Job 来进行伪并发，但是要解决报告数据合并的问题<ul>
 <li>解决方法：将每个 job 结束后报告数据存入数据库，等所有 job 完成后，再从数据库重新取出，生成最后的报告</li>
 </ul>
 </li>
@@ -509,7 +510,7 @@
       
         <div class="post-tags">
           
-            <a href="/slash_ins/tags/Tools/" rel="tag"><i class="fa fa-tag"></i> Tools</a>
+            <a href="/slash_ins/tags/Project/" rel="tag"><i class="fa fa-tag"></i> Project</a>
           
         </div>
       
@@ -522,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/slash_ins/2018/11/08/python-PyUserInput/" rel="next" title="Python 模拟鼠标键盘操作">
-                <i class="fa fa-chevron-left"></i> Python 模拟鼠标键盘操作
+              <a href="/slash_ins/2018/11/08/python-selenium-capabilities/" rel="next" title="如何使用 selenium 改变文件下载路径">
+                <i class="fa fa-chevron-left"></i> 如何使用 selenium 改变文件下载路径
               </a>
             
           </div>
@@ -531,10 +532,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/slash_ins/2018/11/08/idea-license/" rel="prev" title="IntelliJ IDEA 注册码">
-                IntelliJ IDEA 注册码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -637,7 +634,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/slash_ins/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
