@@ -42,8 +42,11 @@ categories: Project
 	- 方法封装：如获取报告路径 / 获取不同 env 对应的 domian 等等
 - user_flows.py
 	- 使用 Webdriver 走 UI 到达 quote page 的 flows
+- generate_finally_report.py
+	- 读取数据库生成报告
 - XXX-test.py
 	- 脚本入口：包括处理 exception 和重跑机制 
+	- 重跑机制：跑完脚本后去数据库搜索 result 为 no 的结果，获取 zipcode 相关信息重跑，然后更新数据库数据
 
 ### 经验总结
 - 对脚本一定要进行分层，比如单独把判断 quote page 的逻辑封装，在验证完逻辑没问题后，后面为了维护脚本稳定性就不会动到逻辑这块，不需要重新大规模验证
