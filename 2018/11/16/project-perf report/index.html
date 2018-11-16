@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
+<meta name="description" content="项目背景 WebPageTest 上测试结果并不能提供一个很直观的报告，而且只有当前这次的结果 需求有点诡异，大概有 可以展示多次报告结果 有图表展示 图表结果自动发送邮件">
 <meta name="keywords" content="Project">
 <meta property="og:type" content="article">
-<meta property="og:title" content="批量遍历 52 states flows">
-<meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/11/08/project-52 states regression/index.html">
+<meta property="og:title" content="性能报告展示平台">
+<meta property="og:url" content="//justforfun2c.github.io/slash_ins/2018/11/16/project-perf report/index.html">
 <meta property="og:site_name" content="JUST FOR FUN">
-<meta property="og:description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
+<meta property="og:description" content="项目背景 WebPageTest 上测试结果并不能提供一个很直观的报告，而且只有当前这次的结果 需求有点诡异，大概有 可以展示多次报告结果 有图表展示 图表结果自动发送邮件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T06:52:54.282Z">
+<meta property="og:updated_time" content="2018-11-16T08:17:58.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="批量遍历 52 states flows">
-<meta name="twitter:description" content="项目背景 最近在做某产品线的部分回归脚本，大体的需求是 通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page） 判断 52 states 跳转的 quote page 是否是正确的">
+<meta name="twitter:title" content="性能报告展示平台">
+<meta name="twitter:description" content="项目背景 WebPageTest 上测试结果并不能提供一个很直观的报告，而且只有当前这次的结果 需求有点诡异，大概有 可以展示多次报告结果 有图表展示 图表结果自动发送邮件">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="//justforfun2c.github.io/slash_ins/2018/11/08/project-52 states regression/"/>
+  <link rel="canonical" href="//justforfun2c.github.io/slash_ins/2018/11/16/project-perf report/"/>
 
 
 
 
 
-  <title>批量遍历 52 states flows | JUST FOR FUN</title>
+  <title>性能报告展示平台 | JUST FOR FUN</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="//justforfun2c.github.io/slash_ins/slash_ins/2018/11/08/project-52 states regression/">
+    <link itemprop="mainEntityOfPage" href="//justforfun2c.github.io/slash_ins/slash_ins/2018/11/16/project-perf report/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Slash_ins">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">批量遍历 52 states flows</h1>
+          <h1 class="post-title" itemprop="name headline">性能报告展示平台</h1>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T06:52:54+00:00">
-                2018-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T08:17:58+00:00">
+                2018-11-16
               </time>
             
 
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  630
+                  885
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -422,74 +422,56 @@
 
       
         <h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><ul>
-<li>最近在做某产品线的部分回归脚本，大体的需求是<ul>
-<li>通过输入一些对应的 zipcode / user info 来获取对应的 plans不同（quote page）</li>
-<li>判断 52 states 跳转的 quote page 是否是正确的</li>
+<li>WebPageTest 上测试结果并不能提供一个很直观的报告，而且只有当前这次的结果</li>
+<li>需求有点诡异，大概有<ul>
+<li>可以展示多次报告结果</li>
+<li>有图表展示</li>
+<li>图表结果自动发送邮件</li>
 </ul>
 </li>
 </ul>
 <a id="more"></a>
-<h3 id="脚本使用框架"><a href="#脚本使用框架" class="headerlink" title="脚本使用框架"></a>脚本使用框架</h3><ul>
-<li>Python + selenium</li>
+<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><ul>
+<li>用 Jenkins 触发 api 在 WebPageTest 跑脚本，并获取报告地址</li>
+<li>搭建一个性能报告展示平台，可以抓取 WebPageTest 报告，并进行图表展示</li>
+<li>用 Python 写个小工具截图，并利用 Jenkins email 插件来插入图片发送邮件</li>
 </ul>
-<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ul>
-<li>如何判断不同的 quote page</li>
-<li>单个用例流程有三个页面，但是遍历后52 states ，每个 state 有4种情况，总共有 200 多个 cases ，如何保证中途 driver 的稳定性</li>
-<li>由第 2 点联想到，200多个 cases，如果顺利，需要至少 1 个半小时，如何缩短运行时间</li>
-<li>cases 中途失败，如何继续往下跑，并在最后进行重试</li>
-<li>cases 失败后如何查看失败情况</li>
-<li>项目部署</li>
-</ul>
-<h3 id="脚本基本流程"><a href="#脚本基本流程" class="headerlink" title="脚本基本流程"></a>脚本基本流程</h3><ul>
-<li>启动 driver</li>
-<li>delete cookies</li>
-<li>主页</li>
-<li>填写信息页 (zipcode / user info)</li>
-<li>判断 quote page</li>
-</ul>
-<h3 id="脚本分层"><a href="#脚本分层" class="headerlink" title="脚本分层"></a>脚本分层</h3><ul>
-<li>init.py / init_db.py<ul>
-<li>初始化</li>
-</ul>
-</li>
-<li>configure.conf<ul>
-<li>配置文件：数据库 / 测试domain / user info</li>
-</ul>
-</li>
-<li>logic.py<ul>
-<li>逻辑层：用来判断是哪种类型的 quote page</li>
-</ul>
-</li>
-<li>db.py<ul>
-<li>db 相关操作</li>
-</ul>
-</li>
-<li>tools.py<ul>
-<li>方法封装：如获取报告路径 / 获取不同 env 对应的 domian 等等</li>
-</ul>
-</li>
-<li>user_flows.py<ul>
-<li>使用 Webdriver 走 UI 到达 quote page 的 flows</li>
-</ul>
-</li>
-<li>XXX-test.py<ul>
-<li>脚本入口：包括处理 exception 和重跑机制 </li>
+<h3 id="使用框架"><a href="#使用框架" class="headerlink" title="使用框架"></a>使用框架</h3><ul>
+<li>Jenkins + Python + Flask + pyecharts<ul>
+<li>Jenkins 用来触发在 WebPageTest 跑脚本</li>
+<li>Flask 用来快速搭建平台提供 api </li>
+<li>pyecharts 用来提供图表展示，可参考 [pyecharts-app][<a href="https://github.com/pyecharts/pyecharts-app]" target="_blank" rel="noopener">https://github.com/pyecharts/pyecharts-app]</a> </li>
 </ul>
 </li>
 </ul>
-<h3 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h3><ul>
-<li><p>对脚本一定要进行分层，比如单独把判断 quote page 的逻辑封装，在验证完逻辑没问题后，后面为了维护脚本稳定性就不会动到逻辑这块，不需要重新大规模验证</p>
-</li>
-<li><p>大量运行的用例会使 remote driver 不太稳定，经常出现 driver connect time out 的情况</p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ul>
+<li>Jenkins 触发 WebPageTest api,并获取报告 url</li>
+<li>Jenkins 触发性能报告展示平台 api 抓取报告数据，并存入数据库</li>
+<li>平台实时获取数据库数据进行图表展示</li>
+<li>Jenkins 是使用 Python 脚本截取相应图表图片</li>
+<li>Jenkins email 插件可在截图结束后，发送自定义 html 报告，将图片插入报告，并发送邮件</li>
+</ul>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ul>
+<li><p>并不是每一次触发 WebPageTest api 都能立刻开始跑脚本，有可能会遇到排队的情况，所以可能随后触发的抓起数据 api 抓不到任何数据</p>
 <ul>
-<li>解决方法：每 4 个用例过后就重启一次 driver,在 4 次用例中如再有失败，则记录下相应的信息并重启 driver ，在脚本循环结束后进行重跑,并且每一次到达 quote page 都进行截图，方便后面排查问题<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">   	<span class="keyword">if</span> state_count != <span class="number">0</span>:</span><br><span class="line">       	driver = start_new_driver()</span><br><span class="line">       	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">       		<span class="keyword">try</span>:</span><br><span class="line">       			<span class="comment"># to do</span></span><br><span class="line">       		exception:</span><br><span class="line">       			<span class="comment"># write the releted info to the error file for rerun the cases last</span></span><br><span class="line">       			result = (<span class="string">'no'</span>, <span class="string">'url'</span>)</span><br><span class="line">       	<span class="comment"># restart the driver			</span></span><br><span class="line">       	<span class="keyword">if</span> <span class="string">'no'</span> <span class="keyword">in</span> result[<span class="number">0</span>]:</span><br><span class="line">               driver = start_new_driver()</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">               <span class="comment"># screen shot</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>解决方法：若没有抓取到数据，则每30秒重新抓取一次数据，2分钟后依旧没有抓取到就将各项数据置为 0 ，并保存报告地址，方便下一次抓取</li>
 </ul>
 </li>
-</ul>
+<li><p>会遇到上次未抓取数据，数据为0， 然后表格在做运算时就会有 0 除的 exception</p>
 <ul>
-<li>python 本身没有并发机制，在 Jenkins 上部署多个 Job 来进行伪并发，但是要解决报告数据合并的问题<ul>
-<li>解决方法：将每个 job 结束后报告数据存入数据库，等所有 job 完成后，再从数据库重新取出，生成最后的报告</li>
+<li>解决方法：每次访问表格页面时都重新抓取一次数据，确保不会有上一次数据为 0 的情况</li>
+</ul>
+</li>
+<li><p>关于截图，原先是采用 phantomjs 来进行全屏截取，不知道啥原因，表格一直渲染不出数据，而 selenium 自带的截图只能截取当前屏幕</p>
+<ul>
+<li>解决方法： 使用 chrome headless 无头模式<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">headless_shotscreen</span><span class="params">(url, flag)</span>:</span></span><br><span class="line">    capabilities = &#123;</span><br><span class="line">        <span class="string">'browserName'</span>: <span class="string">'chrome'</span>,</span><br><span class="line">        <span class="string">'chromeOptions'</span>: &#123;</span><br><span class="line">            <span class="string">'useAutomationExtension'</span>: <span class="keyword">False</span>,</span><br><span class="line">            <span class="string">'forceDevToolsScreenshot'</span>: <span class="keyword">True</span>,</span><br><span class="line">            <span class="string">'args'</span>: [<span class="string">'--start-maximized'</span>, <span class="string">'--disable-gpu'</span>, <span class="string">'--headless'</span>],</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    driver = webdriver.Chrome(desired_capabilities=capabilities)</span><br><span class="line">    driver.set_page_load_timeout(<span class="number">300</span>)</span><br><span class="line">    driver.set_script_timeout(<span class="number">300</span>)</span><br><span class="line">    driver.get(url)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get the actual page dimensions using javascript</span></span><br><span class="line">    width = driver.execute_script(</span><br><span class="line">        <span class="string">"return Math.max(document.body.scrollWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);"</span>)</span><br><span class="line">    print(width)</span><br><span class="line">    height = driver.execute_script(</span><br><span class="line">        <span class="string">"return Math.max(document.body.scrollHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);"</span>)</span><br><span class="line"></span><br><span class="line">    print(height)</span><br><span class="line">    <span class="comment"># resize</span></span><br><span class="line">    driver.set_window_size(width, height)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    image = screen_path() + <span class="string">'/'</span> + flag + <span class="string">'.png'</span></span><br><span class="line">    driver.get_screenshot_as_file(image)</span><br><span class="line">    driver.quit()</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Jenkins email 插件发送邮件不能在正文插入图片</p>
+<ul>
+<li>解决方法：在 Html 中 img 标签应使用 cid 属性, cid 后接的是附件的名称<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;$&#123;ENV, var="JOB_NAME"&#125;-第$&#123;BUILD_NUMBER&#125;次构建日志&lt;/title&gt;</span><br><span class="line">&lt;style&gt; </span><br><span class="line">   img&#123;</span><br><span class="line">	width: auto;</span><br><span class="line">	height: auto;</span><br><span class="line">	max-width: <span class="number">100</span>%;</span><br><span class="line">	max-height: <span class="number">100</span>%;	</span><br><span class="line">&#125;       </span><br><span class="line">&lt;/sytle&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body leftmargin=<span class="string">"8"</span> marginwidth=<span class="string">"0"</span> topmargin=<span class="string">"8"</span> marginheight=<span class="string">"4"</span></span><br><span class="line">    offset=<span class="string">"0"</span>&gt;</span><br><span class="line">    &lt;table width=<span class="string">"95%"</span> cellpadding=<span class="string">"0"</span> cellspacing=<span class="string">"0"</span></span><br><span class="line">        style=<span class="string">"font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif"</span>&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;b&gt;&lt;font color="#0B610B"&gt;Result:&lt;/font&gt;&lt;/b&gt;</span><br><span class="line">            &lt;hr size="2" width="100%" align="center" /&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                    &lt;li&gt;BUILD_NUMBER : $&#123;BUILD_NUMBER&#125;&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;BUILD_URL : &lt;a href="$&#123;BUILD_URL&#125;console"&gt;$&#123;BUILD_URL&#125;console&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">                    &lt;li&gt;Check this link for the test results of current build : $&#123;resultlink&#125;&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;Report Center : http:<span class="comment">//sjtstsel13:3000&lt;/li&gt;</span></span><br><span class="line">                &lt;/ul&gt; </span><br><span class="line">                </span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;img src=<span class="string">"cid:result2.png"</span> alt = <span class="string">'result'</span> /&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line">     &lt;img src=<span class="string">"cid:line2.png"</span> alt = <span class="string">'line'</span> /&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -532,6 +514,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/slash_ins/2018/11/16/project-52 states regression/" rel="prev" title="批量遍历 52 states flows">
+                批量遍历 52 states flows <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -612,7 +598,7 @@
               
                 <a href="/slash_ins/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -724,7 +710,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目背景"><span class="nav-number">1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本使用框架"><span class="nav-number">2.</span> <span class="nav-text">脚本使用框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#难点"><span class="nav-number">3.</span> <span class="nav-text">难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本基本流程"><span class="nav-number">4.</span> <span class="nav-text">脚本基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本分层"><span class="nav-number">5.</span> <span class="nav-text">脚本分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经验总结"><span class="nav-number">6.</span> <span class="nav-text">经验总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目背景"><span class="nav-number">1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案"><span class="nav-number">2.</span> <span class="nav-text">方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用框架"><span class="nav-number">3.</span> <span class="nav-text">使用框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程"><span class="nav-number">4.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题"><span class="nav-number">5.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>
@@ -788,7 +774,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.0k字</span>
+  <span class="post-count">博客全站共2.9k字</span>
 </div>
 
         
